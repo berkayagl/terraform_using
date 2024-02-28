@@ -85,3 +85,13 @@ resource "aws_instance" "example" {
 - `instance_type`: EC2 instance'in kullanacağı örnekleme tipini belirtir. Örnekleme türleri, kaynakların bellek, işlemci gücü, ağ performansı vb. özelliklerine göre farklı boyutlarda sunulur. Örnekteki `t2.nano`, en küçük tür olan nano boyutunda bir örnekleme tipidir. İhtiyaçlarınıza göre farklı bir örnekleme tipi kullanabilirsiniz.
 
 - `subnet_id`: EC2 instance'in hangi subnet'e bağlanacağını belirtir. `aws_subnet.example.id` ifadesi, `aws_subnet` türündeki kaynağın `example` adlı subnet'inin kimliğini referans alır. Bu şekilde, EC2 instance oluşturulduğunda belirtilen subnet'e bağlanır.
+
+## !
+
+Kaynak kontrolüne giden Terraform dosyası (durum dosyasından farklı) DevOps mühendislerinin çalıştığı altyapının tanımıdır.
+Güvence altına alınması gereken en önemli şey budur.
+Bir saldırgan Terraform dosyasını değiştirebilirse işler çığrından çıkar ve kötü günler başlar.
+Dağıtım boru hattının yapabildiği her şeyi yapabilirler.
+Muhtemelen bu, bir sürü yüksek kaliteli GPU örneği oluşturup bir sürü dogecoin madenciliği yapmak ya da
+üretimi silmek anlamına gelir. Saldırganların altyapınızı kod olarak değiştirmelerine izin vermemek en iyisidir.
+
