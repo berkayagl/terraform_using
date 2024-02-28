@@ -24,7 +24,7 @@ terraform {
 
 ## Provider
 
-```hlc
+```hcl
 provider "aws" {
  region = "us-east-1"
 }
@@ -36,7 +36,7 @@ provider "aws" {
 
 ## Resource VPC
 
-```hlc
+```hcl
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
@@ -52,7 +52,7 @@ resource "aws_vpc" "example" {
 
 ## Resource Subnet
 
-```hlc
+```hcl
 resource "aws_subnet" "example" {
   vpc_id                  = aws_vpc.example.id
   cidr_block              = "10.0.1.0/24"
@@ -70,7 +70,7 @@ resource "aws_subnet" "example" {
 
 ## Resource İnstance
 
-```hlc
+```hcl
 resource "aws_instance" "example" {
   ami             = "ami-058face4ac718403d"
   instance_type   = "t2.nano"
